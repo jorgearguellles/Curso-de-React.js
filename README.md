@@ -28,7 +28,51 @@
 - **Depuración:** React siempre nos va a dejar pequeñas pistas cada vez que ocurra un error dentro de nuestra aplicación, para así poder encontrar cuál es el foco del problema y saber que deberíamos cambiar.
 - **Composición:** next module...
 
+[Documentación oficial de los principios de React.js](https://es.reactjs.org/docs/design-principles.html)
+
 # 2. Composición de componentes
+
+- **Composición:** Es un patrón o principio para crear componentes que nos dan más libertad para elgir donde y como usamos nuestros omponentes. Cada componente debe cumplir una tareas muy especifica pero no debe decirnos especificamente como usar esa solución que nos esta proveyendo.
+- [Official React.js Docs: Compocisión vs herencia](https://es.reactjs.org/docs/composition-vs-inheritance.html)
+
+**¿Donde va el estado? = Colocación del estado**
+
+Dos de los principios más populares para decidir donde poner el estado:
+1. **Máxima cercanía a la relevancia:** El estado debe estar tan cerca como sea posible de donde lo estemos usando y actualizando.
+
+Ejemplo 1: Si tenemos un estado que solo lo usamos en un componente ```<TodoHeader/>```, entonces ese estado debe ir en ese componente ```<TodoHeader/>```.
+```js
+const App() => {
+  <>
+    <TodoHeader />
+    <TodoList />
+  <>
+};
+```
+
+Ejemplo 2: Si tenemos un estado que usamos en dos componentes ```<TodoHeader/>``` y ```<TodoList />```, entonces ese estado debe ir en el componente padre más cercado que contenga a esos dos componentes. En este caso es el componente ```App```
+```js
+const App() => {
+  <>
+    <TodoHeader />
+    <TodoList />
+  <>
+};
+```
+
+2. **Stateful vs Stateless:** Separar componentes entre los que solo manejan logica y estado vs otros que solo manejan la UI. No combinarlos.
+
+**¿Cuál es la diferencia entre state y props?**
+
+props (abreviatura de ”properties”) y state son objetos planos de JavaScript. Mientras ambos contienen información que influye en el resultado del render, son diferentes debido a una importante razón: props se pasa al componente (similar a los parámetros de una función) mientras que state se administra dentro del componente (similar a las variables declaradas dentro de una función).
+
+- [ReactJS: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
+- [React guide: props vs state](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+
+> ... props are a way of passing data from parent to child. ... State is reserved only for interactivity, that is, data that changes over time.
+
+
+
 # 3. Render props
 # 4. High Order Components
 # 5. React Hooks
