@@ -73,6 +73,7 @@ props (abreviatura de ”properties”) y state son objetos planos de JavaScript
 
 
 
+
 # 3. Render props
 # 4. High Order Components
 # 5. React Hooks
