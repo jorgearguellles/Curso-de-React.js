@@ -71,8 +71,33 @@ props (abreviatura de ”properties”) y state son objetos planos de JavaScript
 
 > ... props are a way of passing data from parent to child. ... State is reserved only for interactivity, that is, data that changes over time.
 
-
-
 # 3. Render props
+
+Antes de estudiar las render props debes conocer la composición de componentes. 
+
+- **¿Qué son las render props?** 
+  - El término “render prop” se refiere a una técnica para compartir código entre componentes en React utilizando una propiedad cuyo valor es una función.
+  - Nos ayudan a elevar nuestra composición de componentes a otro nivel porque nos permiten ser más específicos sobre que vamos a:
+    - Renderizar
+    - Cuando
+    - Donde 
+- **¿Qué son las render functions?**
+  - Es el patrón de entregar la información en una función es lo que llamamos.
+
+
+A partir de ahora podemos decir que tenemos 2 tipos de props: 
+1. Las props normales que reciben un valor o variable 
+2. Las props que contienen una función. Estas que contienen una función son las que nos interesan.
+Esta función devuelve un componente o un elemento que pudiera tener anidados más elementos y componentes.
+
+### React.Children y React.cloneElement
+
+Nos ayudan a pasar propiedades especiales a los componentes hijos de nuestros componentes contenedores cuando hacemos composición.
+
+- [How to pass data to props.children](https://frontarm.com/james-k-nelson/passing-data-props-children/)
+- [Passing props to props.children using React.cloneElement and render prop pattern](https://medium.com/@justynazet/passing-props-to-props-children-using-react-cloneelement-and-render-props-pattern-896da70b24f6)
+- [React.Children -  Official Docs](https://reactjs.org/docs/react-api.html#reactchildren)
+
+
 # 4. High Order Components
 # 5. React Hooks
